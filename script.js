@@ -163,6 +163,14 @@ function changeLevel() {
   generateCards(true);
 }
 
+function loadGoogleAnalytics() {
+  // Replace "UA-XXXXXXX-X" with your Google Analytics tracking ID
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-YKB4PB76CK');
+}
+
 //modal
 btn.addEventListener("click", function () {
   modal.style.display = "block";
@@ -180,3 +188,7 @@ resetGame.addEventListener("click", WriteNumtoCards);
 leveContainer.addEventListener("change", changeLevel);
 // Call generateCards after the DOM has loaded
 document.addEventListener("DOMContentLoaded", generateCards(false));
+
+document.addEventListener("DOMContentLoaded", function() {
+  loadGoogleAnalytics();
+});
