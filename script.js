@@ -11,6 +11,7 @@ const leveContainer = document.getElementById("level-container");
 // alert S/F
 const successAlert = document.getElementById("success-alert");
 const failAlert = document.getElementById("fail-alert");
+const errorAlert = document.getElementById("error-alert");
 //modeal
 let modal = document.getElementById("help-modal");
 let btn = document.getElementById("open-btn");
@@ -128,7 +129,7 @@ function handleClick() {
     selectedOperation
   );
   if (result === null) {
-    failAlert.classList.remove("hidden");
+    errorAlert.classList.remove("hidden");
     selectedOperation = null;
     document.querySelectorAll("#card").forEach((element) => {
       if (!element.classList.contains("invisible"))
@@ -155,6 +156,8 @@ function alertReset() {
     successAlert.classList.add("hidden");
   if (!failAlert.classList.contains("hidden"))
     failAlert.classList.add("hidden");
+  if (!errorAlert.classList.contains("hidden"))
+    errorAlert.classList.add("hidden");
 }
 
 // Generate new level
